@@ -11,3 +11,11 @@ def cartesian2(arrays):
         ix[:, n] = arrays[n][ix[:, n]]
 
     return ix
+
+def rotate_R2vector(vec,theta):
+    theta = np.radians(theta)
+    c,s = np.cos(theta), np.sin(theta)
+    R = np.matrix([[c,-s],[s,c]])
+    v = vec.reshape(-1,1)
+    return np.array(R*v).flatten()
+
